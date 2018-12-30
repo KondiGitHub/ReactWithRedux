@@ -16,19 +16,13 @@ app.use(require('webpack-dev-middleware')(compiler, {
 }));
 
 app.use(require('webpack-hot-middleware')(compiler));
-//app.use('/images', express.static('images'));
+//app.use('/public', express.static('images'));
 
+app.use(express.static(path.join(__dirname,'../public')));
 app.get('/', function(req, res) {
-  var p = __dirname + '/' + req.params.filepath;
-  console.log("111111request path is"+p);
-  res.sendFile(path.join( __dirname, '../src/index.html'));
+    res.sendFile(path.join( __dirname, '../src/index.html'));
 });
-app.get('/images/', function(req, res) {
 
-  var p = __dirname + '/' + req.params.filepath;
-  console.log("request path is"+p);
-  res.sendFile(path.join( __dirname, '../src/index.html'));
-});
 
 app.listen(port, function(err) {
   if (err) {

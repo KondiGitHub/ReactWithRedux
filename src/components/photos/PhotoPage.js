@@ -3,11 +3,9 @@ import React from "react";
 class PhotoPage extends React.Component {
 
   render() {
-    console.log("THIS IS PHOTOSPAGE");
     return (
       <div>
-        <div className="row">
-          <div className="row gallary">
+          <div className="photogallary">
 
             <div className="row">
               <div className="year">2009</div>
@@ -33,7 +31,7 @@ class PhotoPage extends React.Component {
               </a>
             </div>
           </div>
-          <div className="row gallary" >
+          <div className="photogallary" >
             <div className="row">
               <div className="year">2010</div>
             </div>
@@ -58,7 +56,7 @@ class PhotoPage extends React.Component {
               </a>
             </div>
           </div>
-          <div className="row gallary" >
+          <div className="photogallary" >
             <div className="row">
               <div className="year">2011</div>
             </div>
@@ -83,7 +81,7 @@ class PhotoPage extends React.Component {
               </a>
             </div>
           </div>
-          <div className="row gallary" >
+          <div className="photogallary" >
             <div className="row">
               <div className="year">2012</div>
             </div>
@@ -108,7 +106,7 @@ class PhotoPage extends React.Component {
               </a>
             </div>
           </div>
-          <div className="row gallary" >
+          <div className="photogallary" >
             <div className="row">
               <div className="year">2013</div>
             </div>
@@ -133,7 +131,7 @@ class PhotoPage extends React.Component {
               </a>
             </div>
           </div>
-          <div className="row gallary" >
+          <div className="photogallary" >
             <div className="row">
               <div className="year">2014</div>
             </div>
@@ -158,7 +156,6 @@ class PhotoPage extends React.Component {
               </a>
             </div>
           </div>
-        </div>
       </div>
     );
   }
