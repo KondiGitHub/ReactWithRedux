@@ -1,165 +1,32 @@
 import React from "react";
+import {connect} from 'react-redux';
+import PhotoGallary from "./PhotoGallary";
 
 class PhotoPage extends React.Component {
+  constructor(props,context) {
+    super(props, context);
+    this.state = {
+      photoGallarys : {
+        galaries: []
+      }
+    };
+  }
 
   render() {
     return (
       <div>
-          <div className="photogallary">
-
-            <div className="row">
-              <div className="year">2009</div>
-            </div>
-            <div className="row">
-              <a target="_blank" href="/images/IMG_9910.JPG">
-                <img src="/images/IMG_9910.JPG" alt="Forest" />
-              </a>
-              <a target="_blank" href="/images/IMG_9911.JPG">
-                <img src="/images/IMG_9911.JPG" alt="Forest"  />
-              </a>
-              <a target="_blank" href="/images/IMG_9912.JPG">
-                <img src="/images/IMG_9912.JPG" alt="Forest"  />
-              </a>
-              <a target="_blank" href="/images/IMG_9913.JPG">
-                <img src="/images/IMG_9913.JPG" alt="Forest" />
-              </a>
-              <a target="_blank" href="/images/IMG_9914.JPG">
-                <img src="/images/IMG_9914.JPG" alt="Forest" />
-              </a>
-              <a target="_blank" href="/images/IMG_9917.JPG">
-                <img src="/images/IMG_9917.JPG" alt="Forest"/>
-              </a>
-            </div>
-          </div>
-          <div className="photogallary" >
-            <div className="row">
-              <div className="year">2010</div>
-            </div>
-            <div className="row">
-              <a target="_blank" href="/images/IMG_9910.JPG">
-                <img src="/images/IMG_9910.JPG" alt="Forest" />
-              </a>
-              <a target="_blank" href="/images/IMG_9911.JPG">
-                <img src="/images/IMG_9911.JPG" alt="Forest"  />
-              </a>
-              <a target="_blank" href="/images/IMG_9912.JPG">
-                <img src="/images/IMG_9912.JPG" alt="Forest"  />
-              </a>
-              <a target="_blank" href="/images/IMG_9913.JPG">
-                <img src="/images/IMG_9913.JPG" alt="Forest"  />
-              </a>
-              <a target="_blank" href="/images/IMG_9914.JPG">
-                <img src="/images/IMG_9914.JPG" alt="Forest"  />
-              </a>
-              <a target="_blank" href="/images/IMG_9917.JPG">
-                <img src="/images/IMG_9917.JPG" alt="Forest"  />
-              </a>
-            </div>
-          </div>
-          <div className="photogallary" >
-            <div className="row">
-              <div className="year">2011</div>
-            </div>
-            <div className="row">
-              <a target="_blank" href="/images/IMG_9910.JPG">
-                <img src="/images/IMG_9910.JPG" alt="Forest"  />
-              </a>
-              <a target="_blank" href="/images/IMG_9911.JPG">
-                <img src="/images/IMG_9911.JPG" alt="Forest"  />
-              </a>
-              <a target="_blank" href="/images/IMG_9912.JPG">
-                <img src="/images/IMG_9912.JPG" alt="Forest"  />
-              </a>
-              <a target="_blank" href="/images/IMG_9913.JPG">
-                <img src="/images/IMG_9913.JPG" alt="Forest" />
-              </a>
-              <a target="_blank" href="/images/IMG_9914.JPG">
-                <img src="/images/IMG_9914.JPG" alt="Forest" />
-              </a>
-              <a target="_blank" href="/images/IMG_9917.JPG">
-                <img src="/images/IMG_9917.JPG" alt="Forest" />
-              </a>
-            </div>
-          </div>
-          <div className="photogallary" >
-            <div className="row">
-              <div className="year">2012</div>
-            </div>
-            <div className="row">
-              <a target="_blank" href="/images/IMG_9910.JPG">
-                <img src="/images/IMG_9910.JPG" alt="Forest" />
-              </a>
-              <a target="_blank" href="/images/IMG_9911.JPG">
-                <img src="/images/IMG_9911.JPG" alt="Forest"/>
-              </a>
-              <a target="_blank" href="/images/IMG_9912.JPG">
-                <img src="/images/IMG_9912.JPG" alt="Forest" />
-              </a>
-              <a target="_blank" href="/images/IMG_9913.JPG">
-                <img src="/images/IMG_9913.JPG" alt="Forest" />
-              </a>
-              <a target="_blank" href="/images/IMG_9914.JPG">
-                <img src="/images/IMG_9914.JPG" alt="Forest" />
-              </a>
-              <a target="_blank" href="/images/IMG_9917.JPG">
-                <img src="/images/IMG_9917.JPG" alt="Forest" />
-              </a>
-            </div>
-          </div>
-          <div className="photogallary" >
-            <div className="row">
-              <div className="year">2013</div>
-            </div>
-            <div className="row">
-              <a target="_blank" href="/images/IMG_9910.JPG">
-                <img src="/images/IMG_9910.JPG" alt="Forest" />
-              </a>
-              <a target="_blank" href="/images/IMG_9911.JPG">
-                <img src="/images/IMG_9911.JPG" alt="Forest"  />
-              </a>
-              <a target="_blank" href="/images/IMG_9912.JPG">
-                <img src="/images/IMG_9912.JPG" alt="Forest"/>
-              </a>
-              <a target="_blank" href="/images/IMG_9913.JPG">
-                <img src="/images/IMG_9913.JPG" alt="Forest" />
-              </a>
-              <a target="_blank" href="/images/IMG_9914.JPG">
-                <img src="/images/IMG_9914.JPG" alt="Forest" />
-              </a>
-              <a target="_blank" href="/images/IMG_9917.JPG">
-                <img src="/images/IMG_9917.JPG" alt="Forest" />
-              </a>
-            </div>
-          </div>
-          <div className="photogallary" >
-            <div className="row">
-              <div className="year">2014</div>
-            </div>
-            <div className="row">
-              <a target="_blank" href="/images/IMG_9910.JPG">
-                <img src="/images/IMG_9910.JPG" alt="Forest"  />
-              </a>
-              <a target="_blank" href="/images/IMG_9911.JPG">
-                <img src="/images/IMG_9911.JPG" alt="Forest"  />
-              </a>
-              <a target="_blank" href="/images/IMG_9912.JPG">
-                <img src="/images/IMG_9912.JPG" alt="Forest" />
-              </a>
-              <a target="_blank" href="/images/IMG_9913.JPG">
-                <img src="/images/IMG_9913.JPG" alt="Forest"  />
-              </a>
-              <a target="_blank" href="/images/IMG_9914.JPG">
-                <img src="/images/IMG_9914.JPG" alt="Forest" />
-              </a>
-              <a target="_blank" href="/images/IMG_9917.JPG">
-                <img src="/images/IMG_9917.JPG" alt="Forest" />
-              </a>
-            </div>
-          </div>
+        < PhotoGallary photoGallarys={this.props.photoGallarys} />
       </div>
     );
   }
 }
+function mapStateToProps(state, ownProps) {
 
-export default PhotoPage;
+  return {
+    photoGallarys: state.photoGallarys
+  };
+
+}
+
+export default connect(mapStateToProps)(PhotoPage);
 

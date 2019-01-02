@@ -59,3 +59,8 @@ aside {
   margin-right: 10px;
   margin-bottom: 5px;
 }
+
+.carousel-inner img {
+  width: 30%;
+  height: 30%;
+}
