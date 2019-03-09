@@ -1,11 +1,14 @@
 import React from 'react';
 import {Link} from 'react-router';
 import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
+import {nextPhoto,previousPhoto} from '../../actions/photoGallarysAction';
+
+
 
 class HomePage extends React.Component {
 
    render() {
-     console.log(this.props.photoGallarys);
      return(
        <div>
           <div className="main container-fluid">
@@ -19,12 +22,26 @@ class HomePage extends React.Component {
    }
 }
 
+HomePage.propTypes = {
+  photoGallarys: PropTypes.object,
+  nextPhoto: PropTypes.func,
+  previousPhoto: PropTypes.func
+
+};
 function mapStateToProps(state, ownProps) {
-console.log("state.photoGallarys are ::"+state.photoGallarys)
   return {
     photoGallarys: state.photoGallarys
   };
 
 }
+
+/*function mapDispatchToProps(dispatch) {
+
+  return {
+    nextPhoto : (year) => dispatch(nextPhoto(year)),
+    previousPhoto : (year) => dispatch(previousPhoto(year))
+  };
+
+}*/
 
 export default connect(mapStateToProps)(HomePage);

@@ -1,41 +1,31 @@
 import React from "react";
-
+import PropTypes from 'prop-types';
 class AnchorComponent extends React.Component {
-  getImagePath(photo){
-    return `/images/${photo}`;
+  getImagePath(year,index){
+    return `/images/${year}/0${index+1}.JPG`;
   }
-  buildAnchorTag(photo, num, year,index,gallaryYear){
-    const yearNum = `${year}_${num}`;
-    let classNames = "carousel-item";
-    if(gallaryYear === year) {
-      if(num === index) {
-        classNames = `${classNames} active`;
-      }
-    } else {
-      if(num == 0) {
-        classNames = `${classNames} active`;
-      }
-    }
-
-
-    return(<div className={classNames} id={yearNum}>
-        <img src={this.getImagePath(photo)} alt="Ammulu Picture" />
+  buildAnchorTag(year,index){
+    let classNames = "carousel-item active";
+    return(<div className={classNames}>
+        <img src={this.getImagePath(year, index)} alt="Ammulu Picture" />
       </div>);
-
   }
   render() {
     const year = this.props.year;
     const index = this.props.index;
-    const gallaryYear = this.props.gallaryYear;
     return(
       <div>
         {
-          this.props.photos.map((photo, num) =>
-          this.buildAnchorTag(photo, num, year,index,gallaryYear))
+          this.buildAnchorTag(year,index)
         }
       </div>
     );
   }
 }
+
+AnchorComponent.propTypes = {
+  year: PropTypes.number,
+  index: PropTypes.number
+};
 
 export default AnchorComponent;

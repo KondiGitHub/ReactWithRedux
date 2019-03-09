@@ -1,6 +1,7 @@
 import React from "react";
 import {connect} from 'react-redux';
 import PhotoGallary from "./PhotoGallary";
+import PropTypes from 'prop-types';
 
 class PhotoPage extends React.Component {
   constructor(props,context) {
@@ -27,6 +28,10 @@ function mapStateToProps(state, ownProps) {
   };
 
 }
+
+PhotoPage.propTypes = {
+  photoGallarys: PropTypes.object
+};
 
 export default connect(mapStateToProps)(PhotoPage);
 
